@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    app:startDestination="@id/tablesListFragment">
+
+    <fragment
+        android:id="@+id/tablesListFragment"
+        android:name="com.vitoksmile.tools.db.explorer.app.tables.TablesListFragment"
+        android:label="TablesListFragment"
+        tools:layout="@layout/fragment_tables_list">
+        <action
+            android:id="@+id/actionTableView"
+            app:destination="@id/tableViewFragment" />
+        <action
+            android:id="@+id/actionLocalDBListDialog"
+            app:destination="@id/localDBListDialog" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/tableViewFragment"
+        android:name="com.vitoksmile.tools.db.explorer.app.table.TableViewFragment"
+        android:label="TableViewFragment"
+        tools:layout="@layout/fragment_tableview">
+        <argument
+            android:name="tableName"
+            app:argType="string" />
+    </fragment>
+
+    <dialog
+        android:id="@+id/localDBListDialog"
+        android:name="com.vitoksmile.tools.db.explorer.app.dialogs.LocalDBListDialog"
+        android:label="LocalDBListDialog"
+        tools:layout="@layout/dialog_local_db_list" />
+</navigation>

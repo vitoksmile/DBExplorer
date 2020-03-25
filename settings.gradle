@@ -1,0 +1,3 @@
+include ':explorer'
+include ':app'
+rootProject.name = "DB Explorer"

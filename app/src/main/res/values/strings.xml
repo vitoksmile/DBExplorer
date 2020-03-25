@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">DB Explorer</string>
+    <string name="tables">Tables</string>
+    <string name="choose_local_db">Choose local DB</string>
+</resources>

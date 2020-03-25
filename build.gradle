@@ -1,0 +1,25 @@
+buildscript {
+    repositories {
+        google()
+        jcenter()
+    }
+    apply from: 'dependencies.gradle'
+    dependencies {
+        classpath deps.gradle_plugin.android
+        classpath deps.gradle_plugin.kotlin
+        classpath deps.gradle_plugin.nav_safe_args
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        jcenter()
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
+
+ext.gitCount = { "git rev-list HEAD --no-merges --count".execute().text }

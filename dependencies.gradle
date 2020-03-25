@@ -1,0 +1,54 @@
+ext.project_version = "1.0.0"
+
+// Versions
+def build_versions = [:]
+build_versions.min_sdk = 23
+build_versions.target_sdk = 29
+build_versions.compile = build_versions.target_sdk
+build_versions.build_tools = "29.0.2"
+ext.build_versions = build_versions
+
+def versions = [:]
+versions.kotlin = "1.3.71"
+versions.coroutines = "1.3.5"
+versions.kotlin_gradle_plugin = versions.kotlin
+versions.android_gradle_plugin = "4.0.0-beta03"
+// Android
+versions.appcompat = "1.2.0-alpha03"
+versions.core_ktx = "1.3.0-alpha02"
+versions.fragment_ktx = "1.3.0-alpha02"
+versions.navigation = "2.3.0-alpha04"
+versions.constraint = "2.0.0-beta4"
+versions.material = "1.2.0-alpha05"
+versions.lifecycle = "2.3.0-alpha01"
+ext.versions = versions
+
+// Dependencies
+def deps = [:]
+
+// Gradle
+def gradle_plugin = [:]
+gradle_plugin.android = "com.android.tools.build:gradle:$versions.android_gradle_plugin"
+gradle_plugin.kotlin = "org.jetbrains.kotlin:kotlin-gradle-plugin:$versions.kotlin"
+gradle_plugin.nav_safe_args = "androidx.navigation:navigation-safe-args-gradle-plugin:$versions.navigation"
+deps.gradle_plugin = gradle_plugin
+
+// Kotlin
+deps.kotlin = "org.jetbrains.kotlin:kotlin-stdlib:$versions.kotlin"
+deps.coroutines = "org.jetbrains.kotlinx:kotlinx-coroutines-core:$versions.coroutines"
+
+// Android
+def android = [:]
+android.appcompat = "androidx.appcompat:appcompat:$versions.appcompat"
+android.core_ktx = "androidx.core:core-ktx:$versions.core_ktx"
+android.fragment_ktx = "androidx.fragment:fragment-ktx:$versions.fragment_ktx"
+android.navigation_fragment = "androidx.navigation:navigation-fragment-ktx:$versions.navigation"
+android.navigation_ui = "androidx.navigation:navigation-ui-ktx:$versions.navigation"
+android.constraint = "androidx.constraintlayout:constraintlayout:$versions.constraint"
+android.material = "com.google.android.material:material:$versions.material"
+android.lifecycle_viewmodel = "androidx.lifecycle:lifecycle-viewmodel-ktx:$versions.lifecycle"
+android.lifecycle_livedata = "androidx.lifecycle:lifecycle-livedata-ktx:$versions.lifecycle"
+android.lifecycle_common = "androidx.lifecycle:lifecycle-common-java8:$versions.lifecycle"
+deps.android = android
+
+ext.deps = deps

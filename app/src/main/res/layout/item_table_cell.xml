@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.AppCompatTextView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="100dp"
+    android:layout_height="wrap_content"
+    android:autoLink="web|email"
+    android:gravity="center_horizontal"
+    android:linksClickable="true"
+    android:textColor="#333"
+    android:textSize="14sp"
+    tools:text="@string/app_name" />
